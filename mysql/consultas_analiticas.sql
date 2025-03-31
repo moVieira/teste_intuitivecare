@@ -1,0 +1,18 @@
+SELECT REG_ANS, SUM(VL_SALDO_FINAL) AS total_despesas -- ultimo semestre
+FROM demonstracoes_contabeis
+WHERE DESCRICAO LIKE '%SINISTROS CONHECIDOS%'
+AND DATA BETWEEN '2024-07-01' AND '2024-10-01'
+GROUP BY REG_ANS
+ORDER BY total_despesas DESC
+LIMIT 10;
+
+SELECT REG_ANS, SUM(VL_SALDO_FINAL) AS total_despesas -- ultimo ano
+FROM demonstracoes_contabeis
+WHERE DESCRICAO LIKE '%SINISTROS CONHECIDOS%'
+AND DATA BETWEEN DATE_SUB((SELECT MAX(DATA) FROM demonstracoes_contabeis), INTERVAL 12 MONTH) 
+             AND (SELECT MAX(DATA) FROM demonstracoes_contabeis)
+GROUP BY REG_ANS
+ORDER BY total_despesas DESC
+LIMIT 10;
+
+

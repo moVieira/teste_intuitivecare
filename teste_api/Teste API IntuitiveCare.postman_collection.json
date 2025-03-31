@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "4bb2668d-ce9f-4562-b924-695b3ca258bb",
+		"name": "Teste API IntuitiveCare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43614044"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/buscar_operadora?termo=alice",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"buscar_operadora"
+					],
+					"query": [
+						{
+							"key": "termo",
+							"value": "alice"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
